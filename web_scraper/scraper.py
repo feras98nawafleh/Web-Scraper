@@ -25,17 +25,17 @@ def get_citations_needed_report(URL):
           result_dict['title'] = title
           result_dict['citation number'] = counter
           all_citations.append(result_dict)
-  print(all_citations)
+
   with open('all_results.json', 'w') as f:
       content = json.dumps(all_citations)
       f.write(content)
-      return content
 
+  return content
 
-
-URL = 'https://en.wikipedia.org/wiki/History_of_Mexico'
-count = get_citations_needed_count(URL)
-report = get_citations_needed_report(URL)
-print(count)
-print(report)
+if __name__ == '__main__':
+  URL = 'https://en.wikipedia.org/wiki/History_of_Mexico'
+  count = get_citations_needed_count(URL)
+  report = get_citations_needed_report(URL)
+  # print(count)
+  print(report)
 
